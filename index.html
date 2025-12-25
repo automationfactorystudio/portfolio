@@ -194,13 +194,6 @@
             color: var(--blue-dark);
         }
 
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-        }
-
         .btn-primary {
             border-radius: 999px;
             padding: 0.85rem 1.9rem;
@@ -214,6 +207,7 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
         }
 
@@ -221,14 +215,38 @@
             font-size: 1.2rem;
         }
 
+        /* BOTONES "VER VÍDEO" EN COLOR -------------------------------------- */
         .btn-secondary {
             border-radius: 999px;
             padding: 0.75rem 1.4rem;
-            border: 1px solid rgba(148, 163, 184, 0.8);
-            background: white;
-            color: var(--gray-700);
+            border: 1px solid rgba(20, 93, 160, 0.18);
+            background: linear-gradient(135deg, var(--orange), var(--blue));
+            color: white;
             font-size: 0.88rem;
+            font-weight: 650;
             text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 14px 35px rgba(15, 23, 42, 0.22);
+            transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.28);
+            filter: brightness(1.02);
+        }
+
+        .btn-secondary:active {
+            transform: translateY(0px);
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.20);
+        }
+
+        .btn-secondary:focus-visible {
+            outline: 3px solid rgba(255, 138, 61, 0.35);
+            outline-offset: 3px;
         }
 
         .hero-right {
@@ -406,45 +424,12 @@
             padding-top: 0.7rem;
         }
 
-        /* CÓMO TRABAJO ------------------------------------------------------- */
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 1rem;
+        .case-action {
+            margin-top: 0.9rem;
         }
 
-        .step {
-            background: var(--gray-50);
-            border-radius: 18px;
-            padding: 1.2rem 1.1rem 1.3rem;
-            border: 1px solid rgba(148, 163, 184, 0.4);
-        }
-
-        .step-number {
-            width: 26px;
-            height: 26px;
-            border-radius: 999px;
-            background: white;
-            border: 1px solid rgba(148, 163, 184, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--blue-dark);
-            margin-bottom: 0.6rem;
-        }
-
-        .step-title {
-            font-size: 0.92rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
-
-        .step-text {
-            font-size: 0.83rem;
-            color: var(--gray-700);
+        .case-action a {
+            width: 100%;
         }
 
         /* BENEFICIOS --------------------------------------------------------- */
@@ -496,53 +481,6 @@
             color: rgba(226, 232, 240, 0.9);
         }
 
-        /* CTA FINAL ---------------------------------------------------------- */
-
-        .cta {
-            padding: 3.5rem 0 3.2rem;
-        }
-
-        .cta-box {
-            border-radius: 26px;
-            padding: 2.4rem 2rem;
-            background: linear-gradient(135deg, var(--blue-dark), var(--blue));
-            color: white;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.4rem;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .cta-title {
-            font-size: 1.4rem;
-            letter-spacing: -0.03em;
-            margin-bottom: 0.4rem;
-        }
-
-        .cta-text {
-            font-size: 0.96rem;
-            color: rgba(241, 245, 249, 0.9);
-        }
-
-        .cta-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.85rem;
-            align-items: center;
-        }
-
-        .cta-secondary {
-            border-radius: 999px;
-            padding: 0.7rem 1.1rem;
-            border: 1px solid rgba(226, 232, 240, 0.7);
-            font-size: 0.86rem;
-            background: rgba(15, 23, 42, 0.1);
-            color: white;
-            text-decoration: none;
-        }
-
         footer {
             border-top: 1px solid rgba(148, 163, 184, 0.25);
             padding: 1.2rem 0 2rem;
@@ -570,10 +508,6 @@
                 grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             }
 
-            .steps {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
             .benefits-grid {
                 grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             }
@@ -585,17 +519,12 @@
 
         @media (max-width: 640px) {
             .cases-grid,
-            .steps,
             .benefits-grid {
                 grid-template-columns: minmax(0, 1fr);
             }
 
             .hero {
                 padding-top: 3rem;
-            }
-
-            .cta-box {
-                padding: 1.8rem 1.4rem;
             }
 
             .brand-text-subtitle {
@@ -617,9 +546,7 @@
         </div>
         <nav>
             <a href="#casos">Casos de uso</a>
-            <a href="#metodo">Cómo trabajo</a>
             <a href="#impacto">Impacto</a>
-            <a href="#contacto">Contacto</a>
         </nav>
     </div>
 </header>
@@ -649,16 +576,7 @@
                     <div class="badge"><strong>Soporte</strong> durante la implantación y el cambio</div>
                 </div>
 
-                <div class="hero-actions">
-                    <a href="#contacto" class="btn-primary">
-                        Solicitar una reunión exploratoria
-                        <span>→</span>
-                    </a>
-                    <!-- AQUÍ EL CAMBIO: enlace al vídeo de YouTube -->
-                    <a href="https://youtu.be/dToeksdxrDc" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                        Ver ejemplos de automatización
-                    </a>
-                </div>
+                <!-- Botones eliminados según indicación -->
             </div>
 
             <aside class="hero-right">
@@ -699,7 +617,7 @@
                 <div class="pill-row">
                     <div class="pill">Eventos y formaciones</div>
                     <div class="pill">Recursos Humanos y selección</div>
-                    <div class="pill">Operaciones e incidencias en tiempo real</div>
+                    <div class="pill">Chatbots informativos (Web / Telegram)</div>
                 </div>
             </div>
 
@@ -737,6 +655,12 @@
                     <div class="case-footer">
                         Resultado: menos trabajo manual en listas y acreditaciones, y datos fiables para evaluar cada evento.
                     </div>
+                    <div class="case-action">
+                        <a href="https://youtu.be/AkGsCOiNpBg" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            Ver vídeo
+                        </a>
+                        <!-- Aquí va la URL del vídeo -->
+                    </div>
                 </article>
 
                 <!-- CASO 2 -->
@@ -771,96 +695,61 @@
                     <div class="case-footer">
                         Resultado: hasta un 80&nbsp;% menos de tiempo administrativo y más foco en el talento.
                     </div>
+                    <div class="case-action">
+                        <a href="https://youtu.be/ZeQ-ibsxMDU" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            Ver vídeo
+                        </a>
+                        <!-- Aquí va la URL del vídeo -->
+                    </div>
                 </article>
 
-                <!-- CASO 3 -->
+                <!-- CASO 3 (SUSTITUIDO) -->
                 <article class="case-card">
                     <div class="case-tag">
-                        <span class="case-icon">📊</span>
-                        <span>Operaciones en campo</span>
+                        <span class="case-icon">🤖</span>
+                        <span>ChatBot informativo</span>
                     </div>
-                    <h3 class="case-title">Reporte y gestión de incidencias en tiempo real</h3>
+                    <h3 class="case-title">Chatbot para web o Telegram (información y atención inicial)</h3>
                     <p class="case-sector">
-                        Seguridad, transporte, mantenimiento, hostelería, construcción y otros equipos de campo.
+                        Despachos profesionales (asesorías, gestorías, abogacía) · Inmobiliaria · Hostelería.
                     </p>
                     <p class="case-description">
-                        Un sistema ágil para que el personal en terreno reporte incidencias desde su dispositivo y el equipo coordinador
-                        las gestione desde un panel centralizado.
+                        Un chatbot que resuelve dudas frecuentes, informa de servicios y filtra solicitudes,
+                        para que el equipo solo atienda lo que realmente requiere intervención humana.
                     </p>
                     <ul class="case-list">
                         <li>
                             <span class="case-bullet">•</span>
-                            <span>Registro instantáneo de incidencias desde móvil o tablet.</span>
+                            <span>Atención 24/7: preguntas frecuentes, precios orientativos, horarios y servicios.</span>
                         </li>
                         <li>
                             <span class="case-bullet">•</span>
-                            <span>Clasificación automática por tipología y urgencia.</span>
+                            <span>Captura de leads: nombre, contacto, necesidad y prioridad (con etiquetado automático).</span>
                         </li>
                         <li>
                             <span class="case-bullet">•</span>
-                            <span>Dashboard con estado, responsables y trazabilidad de cada caso.</span>
+                            <span>Derivación a humano: aviso y traspaso del contexto cuando el caso lo requiere.</span>
                         </li>
                         <li>
                             <span class="case-bullet">•</span>
-                            <span>Alertas y notificaciones según prioridad y SLA definido.</span>
+                            <span>Implementación en web y/o Telegram, con panel de métricas y mejora continua.</span>
                         </li>
                     </ul>
                     <div class="case-footer">
-                        Resultado: respuesta más rápida y mejor control de la operación diaria.
+                        Resultado: menos interrupciones, respuestas consistentes y más oportunidades capturadas sin perder tiempo.
+                    </div>
+                    <div class="case-action">
+                        <a href="https://youtu.be/IOuf56nwVd0" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            Ver vídeo
+                        </a>
+                        <!-- Aquí va la URL del vídeo -->
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- CÓMO TRABAJO -->
-    <section class="section" id="metodo">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-kicker">Metodología de trabajo</div>
-                <h2 class="section-title">Aterrizar el proceso, diseñar el flujo, acompañar el cambio.</h2>
-                <p class="section-description">
-                    No se trata solo de “conectar herramientas”, sino de entender cómo trabajáis,
-                    qué información es crítica y quién la necesita en cada momento.
-                </p>
-            </div>
-
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-title">Análisis del proceso actual</div>
-                    <p class="step-text">
-                        Revisión conjunta del flujo, puntos de fricción, herramientas implicadas
-                        y objetivos concretos de la automatización.
-                    </p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-title">Diseño del sistema</div>
-                    <p class="step-text">
-                        Propuesta de arquitectura (formularios, bases de datos, integraciones,
-                        notificaciones) y definición de qué se automatiza y qué no.
-                    </p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-title">Implementación y pruebas</div>
-                    <p class="step-text">
-                        Configuración de flujos, test con casos reales, ajuste de detalles
-                        y validación con el equipo implicado.
-                    </p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-title">Formación y seguimiento</div>
-                    <p class="step-text">
-                        Entrega de guías, formación a usuarios clave y seguimiento inicial
-                        para asegurar una adopción fluida.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- CÓMO TRABAJO (ELIMINADO COMPLETO SEGÚN INDICACIÓN) -->
 
     <!-- IMPACTO -->
     <section class="benefits" id="impacto">
@@ -903,28 +792,7 @@
         </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="cta" id="contacto">
-        <div class="container">
-            <div class="cta-box">
-                <div>
-                    <h2 class="cta-title">¿Exploramos qué procesos tiene sentido automatizar en tu empresa?</h2>
-                    <p class="cta-text">
-                        En una sesión breve podemos revisar vuestro flujo actual y detectar oportunidades claras
-                        de automatización, sin compromiso de implementación.
-                    </p>
-                </div>
-                <div class="cta-actions">
-                    <a href="mailto:tu-correo@empresa.com" class="btn-primary">
-                        Escribir para agendar
-                    </a>
-                    <a href="#casos" class="cta-secondary">
-                        Volver a los casos de uso
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- CTA FINAL (ELIMINADO COMPLETO SEGÚN INDICACIÓN) -->
 </main>
 
 <footer>
