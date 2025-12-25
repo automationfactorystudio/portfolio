@@ -1,2 +1,2 @@
 # portfolio
-Landing con ejemplos de automatización de procesos: eventos, RRHH, incidencias y stock
+Landing con ejemplos de automatización de procesos: Gestión de eventos, RRHH, ChatBots
