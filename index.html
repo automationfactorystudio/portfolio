@@ -6,7 +6,6 @@
     <title>Automatización de Procesos Empresariales</title>
     <style>
         :root {
-            /* Ajusta estos valores a tus azules / naranjas / grises corporativos */
             --blue: #145DA0;
             --blue-dark: #0B3458;
             --orange: #FF8A3D;
@@ -20,11 +19,7 @@
             --shadow-soft: 0 18px 55px rgba(15, 23, 42, 0.18);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -163,9 +158,7 @@
             color: var(--gray-900);
         }
 
-        .hero-highlight {
-            color: var(--blue-dark);
-        }
+        .hero-highlight { color: var(--blue-dark); }
 
         .hero-subtitle {
             font-size: 1rem;
@@ -190,9 +183,7 @@
             color: var(--gray-700);
         }
 
-        .badge strong {
-            color: var(--blue-dark);
-        }
+        .badge strong { color: var(--blue-dark); }
 
         .btn-primary {
             border-radius: 999px;
@@ -211,9 +202,7 @@
             gap: 0.5rem;
         }
 
-        .btn-primary span {
-            font-size: 1.2rem;
-        }
+        .btn-primary span { font-size: 1.2rem; }
 
         /* BOTONES "VER VÍDEO" EN COLOR -------------------------------------- */
         .btn-secondary {
@@ -271,9 +260,7 @@
             gap: 1.2rem;
         }
 
-        .metric {
-            padding-right: 0.4rem;
-        }
+        .metric { padding-right: 0.4rem; }
 
         .metric-value {
             font-size: 1.4rem;
@@ -298,11 +285,9 @@
             color: var(--gray-500);
         }
 
-        /* SECCIÓN: QUÉ SE AUTOMATIZA ---------------------------------------- */
+        /* SECCIÓN ------------------------------------------------------------ */
 
-        .section {
-            padding: 4rem 0 3.5rem;
-        }
+        .section { padding: 4rem 0 3.5rem; }
 
         .section-header {
             max-width: 650px;
@@ -351,14 +336,24 @@
             gap: 1.8rem;
         }
 
+        /* ✅ CAMBIO: color suave en TODA la tarjeta */
         .case-card {
-            background: white;
             border-radius: var(--border-radius-lg);
-            border: 1px solid rgba(148, 163, 184, 0.4);
+            border: 1px solid rgba(148, 163, 184, 0.45);
             padding: 1.6rem 1.5rem 1.7rem;
             display: flex;
             flex-direction: column;
             height: 100%;
+
+            /* Fondo con color (sutil) */
+            background: linear-gradient(
+                135deg,
+                rgba(255, 138, 61, 0.10),
+                rgba(20, 93, 160, 0.08)
+            );
+
+            /* un toque de profundidad (sin pasarse) */
+            box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
         }
 
         .case-tag {
@@ -369,13 +364,12 @@
             font-size: 0.75rem;
             padding: 0.25rem 0.75rem;
             margin-bottom: 0.7rem;
-            background: rgba(20, 93, 160, 0.07);
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(148, 163, 184, 0.35);
             color: var(--blue-dark);
         }
 
-        .case-icon {
-            font-size: 0.95rem;
-        }
+        .case-icon { font-size: 0.95rem; }
 
         .case-title {
             font-size: 1.05rem;
@@ -385,8 +379,9 @@
 
         .case-sector {
             font-size: 0.8rem;
-            color: var(--gray-500);
+            color: var(--gray-700);
             margin-bottom: 0.7rem;
+            opacity: 0.85;
         }
 
         .case-description {
@@ -419,18 +414,20 @@
         .case-footer {
             margin-top: auto;
             font-size: 0.78rem;
-            color: var(--gray-500);
-            border-top: 1px dashed rgba(148, 163, 184, 0.6);
+            color: var(--gray-700);
+            opacity: 0.85;
+            border-top: 1px dashed rgba(148, 163, 184, 0.55);
             padding-top: 0.7rem;
         }
 
+        /* ✅ El botón queda dentro, pero sin “caja” aparte llamativa */
         .case-action {
             margin-top: 0.9rem;
+            padding-top: 0.9rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.30);
         }
 
-        .case-action a {
-            width: 100%;
-        }
+        .case-action a { width: 100%; }
 
         /* BENEFICIOS --------------------------------------------------------- */
 
@@ -442,13 +439,8 @@
             padding: 4rem 0 3.8rem;
         }
 
-        .benefits-header .section-title {
-            color: white;
-        }
-
-        .benefits-header .section-description {
-            color: rgba(226, 232, 240, 0.9);
-        }
+        .benefits-header .section-title { color: white; }
+        .benefits-header .section-description { color: rgba(226, 232, 240, 0.9); }
 
         .benefits-grid {
             display: grid;
@@ -488,10 +480,7 @@
             color: var(--gray-500);
         }
 
-        footer span {
-            color: var(--orange);
-            font-weight: 500;
-        }
+        footer span { color: var(--orange); font-weight: 500; }
 
         /* RESPONSIVE --------------------------------------------------------- */
 
@@ -500,9 +489,7 @@
                 grid-template-columns: minmax(0, 1fr);
             }
 
-            .hero-right {
-                order: -1;
-            }
+            /* Mantener título primero: NO usamos order:-1 en la tarjeta de indicadores */
 
             .cases-grid {
                 grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -512,9 +499,7 @@
                 grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             }
 
-            nav {
-                display: none;
-            }
+            nav { display: none; }
         }
 
         @media (max-width: 640px) {
@@ -523,13 +508,9 @@
                 grid-template-columns: minmax(0, 1fr);
             }
 
-            .hero {
-                padding-top: 3rem;
-            }
+            .hero { padding-top: 3rem; }
 
-            .brand-text-subtitle {
-                display: none;
-            }
+            .brand-text-subtitle { display: none; }
         }
     </style>
 </head>
@@ -635,22 +616,10 @@
                         centralizando la información en un panel único.
                     </p>
                     <ul class="case-list">
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Formulario de inscripción online conectado a base de datos central.</span>
-                        </li>
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Generación automática de entradas con código QR único.</span>
-                        </li>
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Envió de confirmaciones, recordatorios y comunicaciones segmentadas.</span>
-                        </li>
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Control de acceso digitalizado y reporte de asistencia en tiempo real.</span>
-                        </li>
+                        <li><span class="case-bullet">•</span><span>Formulario de inscripción online conectado a base de datos central.</span></li>
+                        <li><span class="case-bullet">•</span><span>Generación automática de entradas con código QR único.</span></li>
+                        <li><span class="case-bullet">•</span><span>Envió de confirmaciones, recordatorios y comunicaciones segmentadas.</span></li>
+                        <li><span class="case-bullet">•</span><span>Control de acceso digitalizado y reporte de asistencia en tiempo real.</span></li>
                     </ul>
                     <div class="case-footer">
                         Resultado: menos trabajo manual en listas y acreditaciones, y datos fiables para evaluar cada evento.
@@ -675,22 +644,10 @@
                         Reducción drástica del tiempo dedicado a revisar, clasificar y trasladar información de candidatos y nuevas incorporaciones.
                     </p>
                     <ul class="case-list">
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Recepción y clasificación automática de candidaturas.</span>
-                        </li>
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Extracción de datos relevantes de CV y formularios.</span>
-                        </li>
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Generación de documentación y presupuestos personalizados.</span>
-                        </li>
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Disminución de introducción manual de datos y errores asociados.</span>
-                        </li>
+                        <li><span class="case-bullet">•</span><span>Recepción y clasificación automática de candidaturas.</span></li>
+                        <li><span class="case-bullet">•</span><span>Extracción de datos relevantes de CV y formularios.</span></li>
+                        <li><span class="case-bullet">•</span><span>Generación de documentación y presupuestos personalizados.</span></li>
+                        <li><span class="case-bullet">•</span><span>Disminución de introducción manual de datos y errores asociados.</span></li>
                     </ul>
                     <div class="case-footer">
                         Resultado: hasta un 80&nbsp;% menos de tiempo administrativo y más foco en el talento.
@@ -718,22 +675,10 @@
                         para que el equipo solo atienda lo que realmente requiere intervención humana.
                     </p>
                     <ul class="case-list">
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Atención 24/7: preguntas frecuentes, precios orientativos, horarios y servicios.</span>
-                        </li>
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Captura de leads: nombre, contacto, necesidad y prioridad (con etiquetado automático).</span>
-                        </li>
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Derivación a humano: aviso y traspaso del contexto cuando el caso lo requiere.</span>
-                        </li>
-                        <li>
-                            <span class="case-bullet">•</span>
-                            <span>Implementación en web y/o Telegram, con panel de métricas y mejora continua.</span>
-                        </li>
+                        <li><span class="case-bullet">•</span><span>Atención 24/7: preguntas frecuentes, precios orientativos, horarios y servicios.</span></li>
+                        <li><span class="case-bullet">•</span><span>Captura de leads: nombre, contacto, necesidad y prioridad (con etiquetado automático).</span></li>
+                        <li><span class="case-bullet">•</span><span>Derivación a humano: aviso y traspaso del contexto cuando el caso lo requiere.</span></li>
+                        <li><span class="case-bullet">•</span><span>Implementación en web y/o Telegram, con panel de métricas y mejora continua.</span></li>
                     </ul>
                     <div class="case-footer">
                         Resultado: menos interrupciones, respuestas consistentes y más oportunidades capturadas sin perder tiempo.
@@ -748,8 +693,6 @@
             </div>
         </div>
     </section>
-
-    <!-- CÓMO TRABAJO (ELIMINADO COMPLETO SEGÚN INDICACIÓN) -->
 
     <!-- IMPACTO -->
     <section class="benefits" id="impacto">
@@ -791,8 +734,6 @@
             </div>
         </div>
     </section>
-
-    <!-- CTA FINAL (ELIMINADO COMPLETO SEGÚN INDICACIÓN) -->
 </main>
 
 <footer>
